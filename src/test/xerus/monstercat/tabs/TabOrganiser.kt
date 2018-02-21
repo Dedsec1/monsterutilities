@@ -1,14 +1,5 @@
 package xerus.monstercat.tabs
 
-import javafx.beans.value.ObservableValue
-import javafx.geometry.Pos
-import javafx.geometry.VPos
-import javafx.scene.Node
-import javafx.scene.control.*
-import javafx.scene.layout.*
-import xerus.monstercat.downloader.*
-import java.util.*
-
 /*
 class TabOrganiser : VBox(), BaseTab {
 
