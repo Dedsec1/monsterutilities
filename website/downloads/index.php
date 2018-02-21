@@ -5,10 +5,7 @@ function println($arg = "") {
 	echo "<br>";
 }
 
-$dirs = glob("*", GLOB_ONLYDIR);
-var_dump($dirs);
-$size = count($dirs);
-println();
-println(file_get_contents("latest/index.html"));
+$latest = file_get_contents("latest/index.html");
+echo '<a href="/downloads/'.$latest.'">'.$latest.'</a>';
 
 ?>
