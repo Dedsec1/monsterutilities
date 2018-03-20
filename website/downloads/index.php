@@ -6,6 +6,12 @@ function println($arg = "") {
 }
 
 $latest = file_get_contents("latest/index.html");
-echo '<a href="/downloads/'.$latest.'">'.$latest.'</a>';
+$ver = $_GET['version']
+$version = isset($ver) && $ver != "latest" ? $ver : $latest
+if(isset($_GET['download'])) {
+
+}
+
+echo '<a href="/downloads?version='.$latest.'&download">'.$latest.'</a>';
 
 ?>
