@@ -32,7 +32,7 @@ object MCatalog {
     fun fetchSheet(tab: String, range: String?): MutableList<List<String>>? {
         var requestRange = tab
         if (!range.isNullOrEmpty())
-            requestRange += "!" + range
+            requestRange += "!$range"
         return try {
             val request = values.get(sheetid, requestRange).setKey("AIzaSyDZSojQaxR2VMx3U7hEgKDAUQqHy8OiihQ")
             val result = request.execute()
