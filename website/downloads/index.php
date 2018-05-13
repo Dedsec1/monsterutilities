@@ -20,9 +20,11 @@ if(isset($version)) {
 
 if(isset($_GET['download'])) {
 	$filename = end(glob("files/*".$version.".jar"));
+	$size = filesize($filename);
 	header('Content-Disposition: attachment; filename="'.end(explode("/", $filename)).'"');
 	header('Content-Transfer-Encoding: binary');
 	header('Content-Type: application/force-download');
+	header("Content-Length: $size");
 	readfile($filename);
 } else {
 	echo $version;
