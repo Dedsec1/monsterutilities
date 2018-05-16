@@ -24,7 +24,8 @@ if(isset($_GET['download'])) {
 	header('Content-Disposition: attachment; filename="'.end(explode("/", $filename)).'"');
 	header('Content-Transfer-Encoding: binary');
 	header('Content-Type: application/force-download');
-	header("Content-Length: $size");
+	header('Content-Length: '.$size);
+	header('Content-Range: 0');
 	readfile($filename);
 } else {
 	echo $version;
