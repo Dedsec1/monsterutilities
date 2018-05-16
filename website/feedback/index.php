@@ -1,16 +1,20 @@
 <?php
 
-//var_dump(get_defined_vars());
 $file = $_FILES['log'];
 
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
-$folder = time() . " - " . $subject;
-mkdir($folder);
-file_put_contents($folder . "/message.txt", $message);
+if(!isset($subject) || !isset($message)) {
+	header("HTTP/1.0 400 Bad Request");
+	exit;
+}
 
-if($file['size'] > 1000000) {
+$folder = time()." - ".$subject;
+mkdir($folder);
+file_put_contents($folder."/message.txt", $message);
+
+if($file['size'] > 100000) {
 	header("HTTP/1.0 413 Request Entity Too Large");
 } elseif(move_uploaded_file($file['tmp_name'], $folder . "/" . basename($file['name']))) {
 	header("HTTP/1.0 200 OK");
