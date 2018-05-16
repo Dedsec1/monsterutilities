@@ -81,9 +81,8 @@ public class Bot {
 
     /** Build and return an authorized Sheets API client service.
      * @return an authorized Sheets API client service
-     * @throws IOException
-     */
-    public static Sheets getSheetsService() throws IOException {
+	 */
+    public static Sheets getSheetsService() {
     	GoogleCredential credential = new GoogleCredential();
         credential.createScoped(SCOPES);
         //authorize();

@@ -28,7 +28,7 @@ public class TaskProgressTests extends Application {
 	private Stage primaryStage;
 	
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 		primaryStage.setTitle("Hello World!");
 		
